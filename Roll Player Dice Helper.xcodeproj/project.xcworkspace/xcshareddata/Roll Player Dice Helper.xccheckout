@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2685CC99-D167-44EA-8FDD-AD66F8B212FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Roll Player Dice Helper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>762E602863F9209EF7A7BD99CEE99710CC499604</key>
+		<string>https://github.com/rbiddle/RollplayerDiceBag.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Roll Player Dice Helper.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>762E602863F9209EF7A7BD99CEE99710CC499604</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rbiddle/RollplayerDiceBag.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>762E602863F9209EF7A7BD99CEE99710CC499604</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>762E602863F9209EF7A7BD99CEE99710CC499604</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Roll%20Player%20Dice%20Helper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
