@@ -8,19 +8,29 @@
 
 import UIKit
 import iAd
+import AVFoundation
 
 
-class ViewController: UIViewController, ADBannerViewDelegate {
+class ViewController: UIViewController, ADBannerViewDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet weak var textStatValue: UITextField!
+    @IBOutlet weak var statEntryLabel: UILabel!
     
     @IBOutlet weak var switchBonusFlag: UISwitch!
     @IBOutlet weak var switchPenaltyFlag: UISwitch!
     
     @IBOutlet weak var labelRollDetails: UILabel!
     @IBOutlet weak var labelResults: UILabel!
+    @IBOutlet weak var labelJustRollRslt: UILabel!
+    
+    @IBOutlet weak var soundButton: UIBarButtonItem!
+    @IBOutlet weak var methodButton: UIBarButtonItem!
     
     @IBOutlet weak var iAdBannerView: ADBannerView!
+    
+    var soundEnabled = false
+    var justRollStyle = false
+    var player: AVAudioPlayer! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +78,41 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         textStatValue.resignFirstResponder()
     }
 
+    @IBAction func soundButtonPressed(sender: AnyObject) {
+        if soundEnabled {
+            soundEnabled = false
+            soundButton.title = "Turn Sound ON?"
+        } else {
+            soundEnabled = true
+            soundButton.title = "Turn Sound OFF?"
+        }
+    }
+
+    @IBAction func methodButtonPressed(sender: AnyObject) {
+        if justRollStyle {
+            justRollStyle = false
+            methodButton.title = "Just Roll Mode?"
+            statEntryLabel.text = "Stat or Skill Value:"
+            textStatValue.hidden = false
+            labelJustRollRslt.hidden = true
+            labelResults.font = UIFont.systemFontOfSize(30)
+            labelRollDetails.text = ""
+            labelResults.text = ""
+            textStatValue.text = "50"
+            
+        } else {
+            justRollStyle = true
+            methodButton.title = "Enter Stat/Skill?"
+            statEntryLabel.text = "Result:"
+            textStatValue.hidden = true
+            labelJustRollRslt.hidden = false
+            labelJustRollRslt.text = ""
+            labelResults.font = UIFont.systemFontOfSize(17)
+            labelRollDetails.text = ""
+            labelResults.text = ""
+        }
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
@@ -84,6 +129,16 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         var detailText: String = ""
         var resultText: String = ""
         var result = 0
+
+        if soundEnabled {
+            let path = NSBundle.mainBundle().pathForResource("diceroll", ofType:"mp3")
+            let fileURL = NSURL(fileURLWithPath: path!)
+            player = AVAudioPlayer(contentsOfURL: fileURL, error: nil)
+            player.prepareToPlay()
+            player.delegate = self
+            player.play()
+        }
+        
         
         if textStatValue.text.toInt() == nil {
             textStatValue.text = "1"
@@ -108,7 +163,12 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             if result == 0 {
                 result = 100
             }
-            detailText = "Roll: \(result) \n(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s; \(rollExtraTens) for Penalty)"
+            if justRollStyle {
+                labelJustRollRslt.text = "\(result)"
+            } else {
+                detailText = "Roll: \(result) \n"
+            }
+            detailText += "(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s; \(rollExtraTens) for Penalty)"
             
         } else if switchBonusFlag.on == true {
             // use extra die as bonus
@@ -116,7 +176,12 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             if result == 0 {
                 result = 100
             }
-            detailText = "Roll: \(result) \n(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s; \(rollExtraTens) for Bonus)"
+            if justRollStyle {
+                labelJustRollRslt.text = "\(result)"
+            } else {
+                detailText = "Roll: \(result) \n"
+            }
+            detailText += "(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s; \(rollExtraTens) for Bonus)"
             
         } else {
             //ignore extra die
@@ -124,21 +189,44 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             if result == 0 {
                 result = 100
             }
-            detailText = "Roll: \(result) \n(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s)"
+            if justRollStyle {
+                labelJustRollRslt.text = "\(result)"
+            } else {
+                detailText = "Roll: \(result) \n"
+            }
+            detailText += "(\(rollOnesPlace) for 1s; \(rollTensPlace) for 10s)"
         }
         
-        if result <= fifthValue {
-            // extreme success
-            resultText += "Extreme Success!"
-        } else if result <= halfValue {
-            // hard success
-            resultText += "Hard Success!"
-        } else if result <= skillValue {
-            // normal success
-            resultText += "Normal Success!"
+        if justRollStyle {
+            // result * 5, *2, hard/extreme may note be possible if multiplication result is > 100
+            let halfValue = result * 2
+            let fifthValue = result * 5
+            if fifthValue >= 100 {
+                resultText += "Extreme Success not possible\n"
+            } else {
+                resultText += ">= \(fifthValue) - Extreme Success\n"
+            }
+            if halfValue >= 100 {
+                resultText += "Hard Success not possible\n"
+            } else {
+                resultText += ">= \(halfValue) - Hard Success\n"
+            }
+            resultText += ">= \(result) - Success\n"
+            resultText += "< \(result) - Failure"
         } else {
-            // failure
-            resultText += "Failure!"
+            if result <= fifthValue {
+                // extreme success
+                resultText += "Extreme Success!"
+            } else if result <= halfValue {
+                // hard success
+                resultText += "Hard Success!"
+            } else if result <= skillValue {
+                // normal success
+                resultText += "Normal Success!"
+            } else {
+                // failure
+                resultText += "Failure!"
+            }
         }
         
         labelRollDetails.hidden = false

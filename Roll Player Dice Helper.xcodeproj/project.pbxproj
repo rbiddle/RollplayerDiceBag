@@ -13,7 +13,9 @@
 		B75724851A05663900F202B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B75724831A05663900F202B0 /* Main.storyboard */; };
 		B757248A1A05663B00F202B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75724881A05663B00F202B0 /* LaunchScreen.xib */; };
 		B75724961A05663B00F202B0 /* Roll_Player_Dice_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75724951A05663B00F202B0 /* Roll_Player_Dice_HelperTests.swift */; };
+		B785EBB11A4275C000638057 /* diceroll.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B785EBB01A4275C000638057 /* diceroll.mp3 */; };
 		B7C15B801A0DB86F005F18A5 /* IMG_0286.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B7C15B7F1A0DB86F005F18A5 /* IMG_0286.JPG */; };
+		B7C9DFA31A47BDD600E39BCD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C9DFA21A47BDD600E39BCD /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,9 @@
 		B757248F1A05663B00F202B0 /* Roll Player Dice HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roll Player Dice HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75724941A05663B00F202B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75724951A05663B00F202B0 /* Roll_Player_Dice_HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll_Player_Dice_HelperTests.swift; sourceTree = "<group>"; };
+		B785EBB01A4275C000638057 /* diceroll.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = diceroll.mp3; sourceTree = "<group>"; };
 		B7C15B7F1A0DB86F005F18A5 /* IMG_0286.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0286.JPG; sourceTree = "<group>"; };
+		B7C9DFA21A47BDD600E39BCD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C9DFA31A47BDD600E39BCD /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,7 @@
 		B75724711A05663800F202B0 = {
 			isa = PBXGroup;
 			children = (
+				B7C9DFA21A47BDD600E39BCD /* AVFoundation.framework */,
 				B757247C1A05663900F202B0 /* Roll Player Dice Helper */,
 				B75724921A05663B00F202B0 /* Roll Player Dice HelperTests */,
 				B757247B1A05663900F202B0 /* Products */,
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				B7C15B7F1A0DB86F005F18A5 /* IMG_0286.JPG */,
+				B785EBB01A4275C000638057 /* diceroll.mp3 */,
 				B757247E1A05663900F202B0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -198,6 +205,7 @@
 			files = (
 				B75724851A05663900F202B0 /* Main.storyboard in Resources */,
 				B757248A1A05663B00F202B0 /* LaunchScreen.xib in Resources */,
+				B785EBB11A4275C000638057 /* diceroll.mp3 in Resources */,
 				B703F7281A16F5FD003704FC /* Images.xcassets in Resources */,
 				B7C15B801A0DB86F005F18A5 /* IMG_0286.JPG in Resources */,
 			);
