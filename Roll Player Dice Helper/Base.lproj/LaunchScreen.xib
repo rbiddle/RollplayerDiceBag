@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -21,13 +21,24 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWz-D5-JAC">
+                    <rect key="frame" x="8" y="459" width="359" height="41"/>
+                    <string key="text">Call of Cthulhu is a registered trademark of
+Chaosium Inc. and is used with permission</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="31" id="6Jh-8O-GHx"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="6xS-Hy-g1Z"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" constant="0.5" id="N3X-bG-Ixu"/>
+                <constraint firstItem="lWz-D5-JAC" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="60" id="O61-f7-g0Q"/>
+                <constraint firstItem="lWz-D5-JAC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="YuN-m8-dNP"/>
                 <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" constant="-0.5" id="ZCq-30-xE3"/>
+                <constraint firstAttribute="trailing" secondItem="lWz-D5-JAC" secondAttribute="trailing" constant="8" id="tQi-Yx-ccP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>

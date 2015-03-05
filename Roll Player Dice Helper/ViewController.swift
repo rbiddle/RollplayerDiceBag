@@ -39,6 +39,16 @@ class ViewController: UIViewController, ADBannerViewDelegate, AVAudioPlayerDeleg
         self.canDisplayBannerAds = true
         self.iAdBannerView.delegate = self
         self.iAdBannerView.hidden = true
+        
+        justRollStyle = true
+        methodButton.title = "Enter Stat/Skill?"
+        statEntryLabel.text = "Result:"
+        textStatValue.hidden = true
+        labelJustRollRslt.hidden = false
+        labelJustRollRslt.text = ""
+        labelResults.font = UIFont.systemFontOfSize(17)
+        labelRollDetails.text = ""
+        labelResults.text = ""
     }
     
     func bannerViewWillLoadAd(banner: ADBannerView!) {
