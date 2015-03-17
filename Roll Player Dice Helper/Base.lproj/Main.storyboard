@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lTn-zE-YOZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lTn-zE-YOZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -116,9 +116,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-CV-TO9">
-                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
-                            </adBannerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rslt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-Mj-IKf">
                                 <rect key="frame" x="17" y="102" width="185" height="80"/>
                                 <constraints>
@@ -129,6 +126,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-CV-TO9">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -151,7 +151,6 @@
                             <constraint firstAttribute="centerX" secondItem="lMR-6W-vn1" secondAttribute="centerX" id="OdJ-t1-ogh"/>
                             <constraint firstItem="cWm-3H-hQ6" firstAttribute="leading" secondItem="Y2k-Jp-iIM" secondAttribute="trailing" constant="-162" id="OhV-3s-WUP"/>
                             <constraint firstItem="wdO-rB-NBh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oym-kY-1HH"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MVX-sI-DEG" secondAttribute="bottom" constant="100" id="QDj-j3-kSR"/>
                             <constraint firstItem="lMR-6W-vn1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-42" id="QhJ-Hw-gUW"/>
                             <constraint firstAttribute="centerX" secondItem="Y2k-Jp-iIM" secondAttribute="centerX" id="RhI-SA-ev6"/>
                             <constraint firstAttribute="centerX" secondItem="261-Gl-E3h" secondAttribute="centerX" constant="-102.5" id="TKW-Zp-u6l"/>
@@ -180,7 +179,7 @@
                                 <exclude reference="rt3-Ob-oX0"/>
                                 <exclude reference="RhI-SA-ev6"/>
                                 <exclude reference="b8q-5P-Fum"/>
-                                <exclude reference="QDj-j3-kSR"/>
+                                <exclude reference="36d-qY-mLy"/>
                             </mask>
                         </variation>
                     </view>
